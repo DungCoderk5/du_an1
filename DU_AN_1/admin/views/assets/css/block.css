@@ -1,0 +1,531 @@
+/* Reset margin và padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Tổng thể trang ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ===== Thanh header ===== */
+header {
+    background-color: #b17457;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ===== Phần nội dung ===== */
+.content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+   
+}
+
+/* ===== Giao diện nút chung ===== */
+
+
+.btn {
+    background-color: #02b8cc;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+    display: inline;
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0704d1;
+    transform: translateY(-2px);
+}
+
+/* Nút Sửa */
+.btn-edit {
+    background-color: #02b8cc;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-edit:hover {
+    background-color: #0704d1;
+    transform: translateY(-2px);
+}
+
+/* Nút Xóa */
+.btn-danger {
+    background-color: #dc3545;
+    transition: background-color 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+tbody td {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+
+}
+
+/* ===== Bảng ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+th,
+td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+
+
+}
+
+thead th,
+tbody td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+th {
+    background-color: #f1f1f1;
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    max-width: 100px;
+
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Hình ảnh sản phẩm */
+td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* ===== Phân trang ===== */
+
+/* ===== Responsive: hiển thị đẹp trên thiết bị di động ===== */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    td img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Tạo kiểu hiệu ứng cho các nút khi di chuột */
+
+/* Tạo kiểu hiệu ứng cho các nút khi di chuột */
+.btn:active,
+.btn-edit:active,
+.btn-danger:active {
+    transform: translateY(1px);
+}
+
+/* Container chung */
+/* Container chung */
+#pagination {
+    display: flex;
+    justify-content: right;
+    /* Canh giữa thanh phân trang */
+    align-items: center;
+    margin-top: 20px;
+    gap: 5px;
+    /* Khoảng cách giữa các phần tử */
+}
+
+/* Style chung cho các nút phân trang */
+#pagination .page {
+    display: inline-block;
+    padding: 10px 20px;
+    /* Tăng padding để các nút đồng đều hơn */
+    font-size: 1rem;
+    /* Kích thước chữ đồng nhất */
+    color: #007bff;
+    /* Màu chữ */
+    text-decoration: none;
+    /* Bỏ gạch chân */
+    border: 1px solid #ddd;
+    /* Viền nhẹ */
+    border-radius: 5px;
+    /* Bo góc nhẹ */
+    background-color: #f9f9f9;
+    /* Màu nền */
+    transition: all 0.3s ease;
+    /* Hiệu ứng hover */
+}
+
+/* Nút hover */
+#pagination .page:hover {
+    background-color: #007bff;
+    /* Đổi màu nền khi hover */
+    color: #fff;
+    /* Màu chữ khi hover */
+    border-color: #007bff;
+    /* Đổi màu viền khi hover */
+}
+
+/* Nút active (đang được chọn) */
+#pagination .page.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    cursor: default;
+    pointer-events: none;
+    /* Vô hiệu hóa hành động nhấp */
+}
+
+/* Nút đầu tiên và cuối cùng */
+#pagination .page.first,
+#pagination .page.last {
+    font-weight: bold;
+    /* Làm đậm chữ */
+}
+
+/* Nút trước và sau */
+#pagination .page.prev,
+#pagination .page.next {
+    font-size: 1.1rem;
+    /* Tăng kích thước một chút */
+}
+
+/* Nút bị vô hiệu hóa */
+#pagination .page.disabled {
+    color: #ccc;
+    background-color: #f9f9f9;
+    border-color: #ddd;
+    pointer-events: none;
+    /* Không cho phép nhấp */
+}
+
+/* Đảm bảo các phần tử trong thanh phân trang không bị kéo dài */
+#pagination {
+    flex-wrap: wrap;
+    /* Tự động xuống dòng nếu không đủ chỗ */
+}
+
+[disabled] {
+    cursor: not-allowed;
+    pointer-events: none;
+    /* Không cho phép nhấp */
+}
+
+/* Wrapper cho dashboard */
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #fff;
+}
+
+/* Phản hồi với màn hình nhỏ */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+.search_content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa nút và ô tìm kiếm */
+}
+
+.search-container {
+    position: relative; /* Để có thể đặt icon vào vị trí chính xác */
+}
+
+.search_content input[type="search"] {
+    width: 500px; /* Chiều rộng ô tìm kiếm */
+    height: 40px; /* Chiều cao của ô tìm kiếm */
+    padding: 5px 20px; /* Padding trong ô tìm kiếm */
+    font-size: 16px; /* Cỡ chữ trong ô tìm kiếm */
+    border-radius: 20px; /* Bo góc tròn cho ô tìm kiếm */
+    border: 1px solid #ccc; /* Viền xung quanh ô tìm kiếm */
+    outline: none; /* Xóa outline mặc định khi focus */
+    transition: border-color 0.3s ease; /* Hiệu ứng thay đổi viền khi focus */
+}
+
+.search_content input[type="search"]:focus {
+    border-color: #02b8cc; /* Màu viền khi ô tìm kiếm được focus */
+}
+
+.search-container i.fa-magnifying-glass {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Khoảng cách từ bên phải */
+    transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+    font-size: 20px; /* Cỡ icon */
+    color: #ccc; /* Màu sắc icon */
+    pointer-events: none; /* Đảm bảo không gây cản trở việc tương tác với ô input */
+    
+}
+
+
+.btn {
+    background-color: #02b8cc;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0704d1;
+    transform: translateY(-2px);
+}
+
+
+/* Form container */
+.form-container {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #0288d1;
+    outline: none;
+    box-shadow: 0 0 5px rgba(2, 136, 209, 0.2);
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s ease-in-out;
+    color: #333;
+}
+
+select:focus {
+    border-color: #0288d1;
+    outline: none;
+    box-shadow: 0 0 5px rgba(2, 136, 209, 0.2);
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.btn {
+    background-color: #0288d1;
+    color: #fff;
+    font-weight: bold;
+}
+
+button.btn:hover {
+    background-color: #026fa1;
+    transform: translateY(-2px);
+}
+
+button.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+button.btn-danger:hover {
+    background-color: #b52a37;
+    transform: translateY(-2px);
+}
+
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Phần mở rộng / thu gọn thông tin */
+.toggle-content {
+    display: none;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.toggle-button {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: #0288d1;
+    font-size: 1.2rem;
+}
+
+.toggle-button i {
+    margin-right: 5px;
+}
+
+.toggle-button:hover {
+    color: #026fa1;
+}

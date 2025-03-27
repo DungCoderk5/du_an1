@@ -1,0 +1,112 @@
+<!--! Product Has Discount -->
+<div class="products flex flex-col relative" data-product-id="'. $product_id .'" onclick="home_Detail(this)">
+    <img src="./public/upload/imgs/Products/'. $img_url .'" alt="">
+    <h3 class="pro-brand">' . htmlspecialchars($name_br) . '</h3>
+    <h4 class="pro-name-2">
+        <p>' . htmlspecialchars($name_pro) . '</p>
+    </h4>
+    <div class="cost">
+        <span class="cost-pro"><del>' . number_format($price) . '</del>đ</span>
+        <span class="sale-off">' . number_format($saleoff) . 'đ</span>
+    </div>
+    <div class="button">
+        <a id="a-buyNow" href="index.php?page=Cart&action=cart&id='. $product_id .'"><button
+                class="buy-now button-text">Mua ngay</button></a>
+        <i onclick="addWishList()" class="fa-regular fa-heart"></i>
+    </div>
+    <div class="discount-pro absolute text-white bg-red-400">
+        <p>' . htmlspecialchars($discount) . '%</p>
+    </div>
+    <form action="" method="post">
+        <input type="hidden" name="id" value="'. $product_id .'">
+        <input type="hidden" name="price" value="' . number_format($price) . '">
+        <input type="hidden" name="saleoff" value="' . $saleoff . '">
+        <input type="hidden" name="img" value="'. $img_url .'">
+        <input type="hidden" name="name" value="' . htmlspecialchars($name_pro) . '">
+        <input type="hidden" name="discount" value="' . htmlspecialchars($discount) . '">
+        <input type="hidden" name="brand" value="' . htmlspecialchars($name_br) . '">
+        <button type="submit" name="btn_addToCart" class="CartBtn">
+            <span class="IconContainer">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="rgb(17, 17, 17)"
+                    class="cart">
+                    <path
+                        d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z">
+                    </path>
+                </svg>
+            </span>
+            <p class="text"> + Giỏ hàng</p>
+        </button>
+    </form>
+    <div class="CartBtn2">
+        <i class="fa-solid fa-cart-plus"></i>
+    </div>
+    <div class="pro-inf-new">
+        <p>Mới</p>
+    </div>
+</div>
+
+<!--! Product No Discount -->
+<div id="product-list-3" class="products flex flex-col relative" data-product-id="'. $product_id .'"
+    onclick="home_Detail(this)">
+    <img style="border-radius: 5px;" src="./public/upload/imgs/Products/'. $img_url .'" alt="">
+    <h3 class="pro-brand">' . htmlspecialchars($name_br) . '</h3>
+    <h4 class="pro-name-2">
+        <p>' . htmlspecialchars($name_pro) . '</p>
+    </h4>
+    <div class="cost">
+        <span class="sale-off">' . number_format($saleoff) . 'đ</span>
+    </div>
+    <div class="button">
+        <a id="a-buyNow" href="index.php?page=Cart&action=cart&id='. $product_id .'""><button class=" buy-now
+            button-text">Mua ngay</button></a>
+        <i onclick="addWishList()" class="fa-regular fa-heart"></i>
+    </div>
+    <form action="" method="post">
+        <input type="hidden" name="id" value="'. $product_id .'">
+        <input type="hidden" name="price" value="' . number_format($price) . '">
+        <input type="hidden" name="saleoff" value="' . $saleoff . '">
+        <input type="hidden" name="img" value="'. $img_url .'">
+        <input type="hidden" name="name" value="' . htmlspecialchars($name_pro) . '">
+        <input type="hidden" name="discount" value="' . htmlspecialchars($discount) . '">
+        <input type="hidden" name="brand" value="' . htmlspecialchars($name_br) . '">
+        <button type="submit" name="btn_addToCart" class="CartBtn">
+            <span class="IconContainer">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="rgb(17, 17, 17)"
+                    class="cart">
+                    <path
+                        d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z">
+                    </path>
+                </svg>
+            </span>
+            <p class="text"> + Giỏ hàng</p>
+        </button>
+    </form>
+    <div class="CartBtn2">
+        <i class="fa-solid fa-cart-plus"></i>
+    </div>
+    <div class="pro-inf-new">
+        <p>Mới</p>
+    </div>
+</div>
+
+<!--! New  -->
+<div class="pro-inf-new">
+    <p>Mới</p>
+</div>
+
+<!--! Hot -->
+<div class="pro-inf-hot">
+    <p><i class="fa-solid fa-fire"></i></p>
+</div>
+
+<!--! Box read  -->
+<div id="box-read-more">
+    <form method="POST" action="">
+        <input type="hidden" name="limit" value="<?= isset($_POST['limit']) ? $_POST['limit'] + 4 : 12; ?>">
+        <button id="button-read-more" type="submit" class="read-more">Xem thêm</button>
+    </form>
+    <form method="POST" action="" id="button-read-less" class="button-read-less">
+        <input type="hidden" name="limit" value="8">
+        <button type="submit"><i class="fa-solid fa-arrow-up"></i> Thu gọn</button>
+    </form>
+</div>
